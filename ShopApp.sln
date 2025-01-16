@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopAPI", "ShopAPI\ShopAPI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{281E259F-D927-4DBD-93BA-435884D667E0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F0FF79E9-8002-41AF-B21F-D4C31C68CAEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityModels", "EntityModels\EntityModels.csproj", "{C4989F77-DEBC-48FA-8999-3E11D0614695}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{281E259F-D927-4DBD-93BA-435884D667E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{281E259F-D927-4DBD-93BA-435884D667E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{281E259F-D927-4DBD-93BA-435884D667E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4989F77-DEBC-48FA-8999-3E11D0614695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4989F77-DEBC-48FA-8999-3E11D0614695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4989F77-DEBC-48FA-8999-3E11D0614695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4989F77-DEBC-48FA-8999-3E11D0614695}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +40,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4F06A752-7561-433B-B336-426464F7174A} = {F9715DD8-1AD5-44A2-BA02-BEFDB3B0843A}
 		{281E259F-D927-4DBD-93BA-435884D667E0} = {6E3FC55E-423B-4D6F-A3E9-B0DCBB3112F1}
+		{C4989F77-DEBC-48FA-8999-3E11D0614695} = {F0FF79E9-8002-41AF-B21F-D4C31C68CAEA}
 	EndGlobalSection
 EndGlobal
