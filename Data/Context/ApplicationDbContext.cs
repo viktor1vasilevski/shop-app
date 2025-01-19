@@ -1,10 +1,15 @@
-﻿using EntityModels.Models;
+﻿using Core;
+using EntityModels.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Context;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : DbContext, IDbContext
 {
+    public ApplicationDbContext()
+    {
+            
+    }
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
             

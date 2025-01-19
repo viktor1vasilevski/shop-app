@@ -1,9 +1,8 @@
 using Data.Context;
 using EntityModels.Models;
 using Main.Helpers;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Data;
+using Main.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,8 +15,9 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-var app = builder.Build();
+builder.Services.AddIoCService();
 
+var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
@@ -60,7 +60,6 @@ using (var scope = app.Services.CreateScope())
         Console.WriteLine($"Error during admin user setup: {ex.Message}");
     }
 }
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
