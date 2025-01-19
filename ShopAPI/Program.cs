@@ -30,29 +30,10 @@ using (var scope = app.Services.CreateScope())
         // Apply any pending migrations
         dbContext.Database.Migrate();
 
-        var roleExists = dbContext.Roles.Any(u => u.Name == "Admin");
-        if (!roleExists)
+        var adminExist = dbContext.Users.Any(x => x.Username == "admin");
+
+        if (!adminExist)
         {
-            var role = new Role 
-            { 
-                Name = "Admin",
-                Created = DateTime.Now,
-                CreatedBy = "Admin"
-            };
-
-            dbContext.Roles.Add(role);
-            dbContext.SaveChanges();
-        }
-
-        // Check if admin user exists
-        var adminExists = dbContext.Users.Any(u => u.Role.Name == "Admin");
-
-        if (!adminExists)
-        {
-            // Create the admin user if it doesn't exist
-
-
-            var adminRoleId = dbContext.Roles.FirstOrDefault(x => x.Name == "Admin").Id;
 
             var saltKey = PasswordHelper.GenerateSalt();
             var adminUser = new User
@@ -61,14 +42,12 @@ using (var scope = app.Services.CreateScope())
                 LastName = "Admin",
                 Email = "admin@example.com",
                 Username = "admin",
-                IsActive = true,
                 Password = PasswordHelper.HashPassword("Admin@123", saltKey),
                 SaltKey = Convert.ToBase64String(saltKey),
                 CreatedBy = "Admin",
                 Created = DateTime.Now,
                 LastModifiedBy =  null,
-                LastModified = null,
-                RoleId = adminRoleId,
+                LastModified = null
             };
 
             dbContext.Users.Add(adminUser);

@@ -10,9 +10,4 @@ public class User : AuditableBaseEntity
     public string Email { get; set; }
     public string Password { get; set; }
     public string SaltKey { get; set; }
-    public bool IsActive { get; set; }
-    public Guid RoleId { get; set; }
-
-
-    public virtual Role Role { get; set; }
 }
